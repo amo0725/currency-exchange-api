@@ -9,6 +9,11 @@ import { ConvertCurrencyAO } from './ao/currency.ao';
 export class CurrencyController {
   constructor(private readonly currencyService: CurrencyService) {}
 
+  /**
+   * Endpoint to convert an amount from a source currency to a target currency.
+   * @query dto - QueryConvertCurrencyDTO
+   * @returns - ConvertCurrencyAO
+   */
   @Get('convert')
   async convert(
     @Query() dto: QueryConvertCurrencyDTO
